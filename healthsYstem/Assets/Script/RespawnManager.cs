@@ -16,28 +16,42 @@ public class RespawnManager : MonoBehaviour
 
         for (int i = 0; i < respawnList.Count; i++)
         {
-            current++;
+            //current++;
         }
-        
+      
+        /*
         if (pointRespawn.isActive)
         {
             respawnList.Add(GameObject.Find("RespawnPoint_1"));
 
+        }
+        */
+
+        for (int i = 0; i < respawnList.Count; i++)
+        {
+            if (pointRespawn.isActive) 
+            {
+               
+            }
         }
     }
 
-    void Add()
+    void AddCheckPointToList()
     {
-        if (pointRespawn.isActive)
+
+        for (int i = 0; i < respawnList.Count; i++)
         {
-            respawnList.Add(GameObject.Find("RespawnPoint_1"));
-
+            if (pointRespawn.isActive)
+            {
+                //respawnList.Add( pointRespawn.AddingObject(gameObject));
+                respawnList.Add(gameObject);
+            }
+            respawnList.Add(gameObject);
         }
-
     }
 
     private void Update()
     {
-       
+        AddCheckPointToList();
     }
 }
